@@ -34,16 +34,17 @@ con <- dbConnect(
               password = pw ) #, options = 'ssl_mode=allow')
 
 ```
-Using the function *dbGetQuery* you can send an SQL query to teh database 
+Using the function *dbGetQuery* you can send an SQL query to the database, and store the query result in a R variable. 
 
 ```r
- tacsat <-  DBI::dbGetQuery(con, paste0( '
-select a.*, b."LE_GEAR", f_state
-FROM tacsat_', year ,'  where gid in
+tacsat <-  DBI::dbGetQuery(con, paste0( '
+SELECT a.*, b."LE_GEAR", f_state
+FROM tacsat_', year ,'  
+WHERE gid in
     (
-    select DISTINCT gid 
-    from tacsat.metadata_', year ,'  
-    where in_port IS NULL 
+    SELECT DISTINCT gid 
+    FROM tacsat.metadata_', year ,'  
+    WHERE in_port IS NULL 
     AND   in_land IS NULL 
     AND duplicate IS NULL 
     AND   f_state = 'f'  

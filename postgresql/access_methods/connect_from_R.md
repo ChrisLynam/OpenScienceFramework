@@ -27,7 +27,7 @@ drv <- dbDriver("Postgres")
 # creates a connection to the postgres database. "con" parameter will be used in each connection to the database
 con <- dbConnect(
               drv,
-              dbname = "fishgis",
+              dbname = "geofish",
               host = "azsclnxgis01.postgres.database.azure.com",
               port = 5432, 
               user = "<your user>", 

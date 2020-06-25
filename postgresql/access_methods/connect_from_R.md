@@ -4,9 +4,16 @@ Load the required libraries from the CRAN
 
 ```r 
 
-library(RODBC)
-library(RPostgres)
-library(DBI)
+###connection to db libraries
+library (DBI )
+library (RPostgres)
+
+###connection to db libraries
+library(sf)
+
+library(dplyr)
+library(ggplot2)
+
 ```
 
 Establish the connection introducing the database connection detail . 

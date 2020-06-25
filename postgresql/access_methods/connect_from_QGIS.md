@@ -18,3 +18,13 @@ The PostgreSQL connection details required are:
 - **USER & PASSWORD**: Your users and password details that will provide predetermined rights into the DB. ( Read, Write , Update, etc ) .
 
 ![Create a new connection](img/qgis_2.png)
+
+
+
+
+Once we have a success connection to our PostgreSQL database , we can epxlore the tables and spatial data in the database using the browser. 
+You can add into the Layers list the desired spatial table right clicking in the desired table and select 'Add Layer to Project'. 
+
+
+
+![Create a new connection](img/qgis_3.png)

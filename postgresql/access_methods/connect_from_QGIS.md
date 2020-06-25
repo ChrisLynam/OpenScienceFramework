@@ -11,10 +11,10 @@ You have to introduce now the details of a new connection to the PostgreSQL Data
 
 The PostgreSQL connection details required are: 
 
-HOST: address of the server where the PostgreSQL DB is hosted
-DATABASE: The name of the database you are aiming to connect 
-PORT: By default is PostgreSQL Server listen trhough the port 5432 
-SSL: Secure connectivity to the databses activated or not . Cefas Database are using SSL , therefore we will 'Allow' it. 
-USER & PASSWORD: Your users and password details that will provide predetermined rights into the DB. ( Read, Write , Update, etc ) .
+- **HOST**: address of the server where the PostgreSQL DB is hosted
+- **DATABASE**: The name of the database you are aiming to connect 
+- **PORT**: By default is PostgreSQL Server listen trhough the port 5432 
+- **SSL**: Secure connectivity to the databses activated or not . Cefas Database are using SSL , therefore we will 'Allow' it. 
+- **USER & PASSWORD**: Your users and password details that will provide predetermined rights into the DB. ( Read, Write , Update, etc ) .
 
 ![Create a new connection](img/qgis_2.png)

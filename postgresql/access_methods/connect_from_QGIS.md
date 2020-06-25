@@ -1,9 +1,9 @@
+## Connect to PostgreSQL from QGIS
 
-![Open Science Cefas](img/qgis1.png)
 
-# OpenScienceFramework
-SQL , R platform (R Development Core Team, 2017) and Python are the most widely used programming languages at Cefas for data exploration, visualisation, modelling and statistical analysis.
+Open your QGIS destop application and be sure you have the Brower Panel open . If the Browser panel doesnt appears  you would have to open by menu option 'VIEW' ,  then 'PANELS' and click on 'BROWSER' panel . 
 
-The methods developed using these programming languages can be made accesible using Github, packages, R Markdown and Python Jupiter Notebooks for the creation of interactive documents or web user interface using R Shiny apps . These web products allow users to interact with science methods and outputs, without any requirement for software or a need to understand complex code. R Shiny allows scientists to create web data tools without deep web programming knwoledge and therefore establishing a straight communication with the scientific communitiy , decision makers and other stakeholders. 
+Once the Browser Panel is shown navigate until you find the **POSTGIS** option and with right click you can establish a 'NEW CONNECTION' as shown in the image belwo. 
 
-Cefas Open Science Framework (OSF) Seedcorn projects aims to develop a set of descriptive , good practice documents and training material designed for scientist, IT experts, project managers and business developer. The OSF includes a catalogue of recommended open source software available in Cefas and provides the required systems to store, analyse, publish and access scientific methods and data.
+![Open Science Cefas](img/qgis_1.png)
+ 

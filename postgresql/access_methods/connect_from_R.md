@@ -44,7 +44,103 @@ locations <-  DBI::dbGetQuery(con, paste0( '
 ) )
     
 ```
-    
+
+More advance and best practice R code to interrogate the DATABASE
+
+
+### SELECT DATA FROM POSTGRESQL
+
+```r 
+
+### Fetch data from PostgreSQL Database 
+
+  query_gt <- SQL(sprintf('SELECT * FROM  locations;'))
+
+  locations <-  DBI::dbGetQuery(con,  query_gt )
+  
+  head(locations)
+  str (locations)
+  plot(locations)
+```  
+  ### SELECT SPATIAL DATA FROM POSTGRESQL
+
+```r 
+  
+  ### spatial data must be read with Simople Features package (SF) 
+  
+  locations_sf <-  st_read(dsn = con,  query = query_gt)
+  
+  head(locations_sf)
+  str (locations_sf)
+  plot(locations_sf)
+ 
+  
+ ```
+ 
+ #### Select data including R variables in SQL String
+ 
+ ```r
+  
+  ## select data including R variables
+  
+  place <- 'Stokeworth'
+  
+  query_gt1 <- SQL(sprintf("SELECT * FROM locations WHERE name = '%s';", place ))
+  
+  locations_sf <-  st_read(dsn = con,  query = query_gt1)
+  
+  head(locations_sf)
+  str (locations_sf) 
+  
+  
+ ```
+ 
+ #### Send queries to PostgreSQL
+ 
+ ```r
+ 
+  query_gt <- SQL(sprintf('create table locations_roi as select * from locations;'))
+  DBI::dbSendQuery(con,  query_gt )
+  
+  query_gt <- SQL(sprintf('select * from locations_roi;'))
+  
+  locations_roi <-  DBI::dbGetQuery(con,  query_gt )
+  
+
+```
+ 
+ #### Send DATA to PostgreSQL
+ 
+ ```r
+
+ ### Send DATA  to PostgreSQL Database 
+  
+  gid_ <- 99999
+  name_ <- 'Vigo'
+  type_ <- 'City'
+  lon_ <- -8
+  lat_ <- 42
+  
+  
+  query_gt <- SQL(sprintf("INSERT INTO locations_roi (gid, name, type, lon, lat )  VALUES (%i, '%s', '%s', %d, %d ) ;", gid_, name_, type_, lon_, lat_))
+  
+  DBI::dbSendQuery(con,  query_gt )
+  
+  query_gt <- SQL(sprintf('select * from locations_roi;'))
+  
+  locations_roi <-  DBI::dbGetQuery(con,  query_gt )
+  
+  
+  locations_roi %>% filter(name == 'Vigo')
+  
+  head(locations_roi)
+  str (locations_roi)
+  plot(locations_roi)
+ 
+```
+
+## TERMINATE YOUR CONNECTION
+
 Be sure to terminate your connection once you finis querying the Database 
 
 ```r 

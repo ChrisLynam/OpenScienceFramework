@@ -11,7 +11,7 @@ import geopandas as gpd
 
 Establish the connection introducing the database connection detail . 
 
-1. **Driver:** If you have an ODBC defined driver in your computer  used here , otherwhise use *dbDriver("Postgres")*
+1. **Driver:** PostgreSQL driver is defined by default in the psycopg2 library 
 2. **host:** The url/address of the PostgreSQL Database Server. If it is installed in your computer use: *localhost*
 3. **port:** Define the port used by your PostgreSQL Database Server. Default used port is 5432.  
 4. **dbname:** The name of the database within the PostgreSQL DB Server you want to connect 

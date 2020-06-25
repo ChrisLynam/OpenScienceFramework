@@ -24,11 +24,12 @@ The PostgreSQL connection details required are:
 
 ![Create a new connection](img/qgis_2.png)
 
-### 2. Add a layer to your Project 
+### 2. Add a table to your Project 
 
 
 Once we have a success connection to our PostgreSQL database , we can epxlore the tables and spatial data in the database using the browser. 
 You can add into the Layers list the desired spatial table right clicking in the desired table and select 'Add Layer to Project'. 
+In this moment you have an instance of the table inyour QGIS enviroments, this is called a LAYER. What you can do with a layer is in detail in the GI USer Groups modules topics. 
 
 
 

@@ -38,7 +38,6 @@ Using the function *dbGetQuery* you can send an SQL query to the database, and s
 
 ```r
 
-
 locations <-  DBI::dbGetQuery(con, paste0( '
   SELECT *
   FROM  locations; ' 
@@ -46,3 +45,10 @@ locations <-  DBI::dbGetQuery(con, paste0( '
     
 ```
     
+Be sure to terminate your connection once you finis querying the Database 
+
+```r 
+dbDisconnect(con)
+dbUnloadDriver(drv)
+
+```
